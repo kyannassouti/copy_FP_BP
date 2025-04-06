@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS Shipments;
+
+-- Represents all shipment transactions and their status/location
+CREATE TABLE IF NOT EXISTS Shipments (
+shipmentId INTEGER,
+farmerAccount INTEGER,
+carrierAccount INTEGER,
+status TEXT,
+warehouseId INTEGER,
+rackLocation TEXT
+);
+
+-- Initiate shipments with status 'In Transit' which will be updated once received and stored by logistics team 
+INSERT INTO Shipments VALUES (101, 1, 9, 'In Transit', NULL, NULL);
+INSERT INTO Shipments VALUES (102, 2, 9, 'In Transit', NULL, NULL);
+INSERT INTO Shipments VALUES (103, 3, 9, 'In Transit', NULL, NULL);
+INSERT INTO Shipments VALUES (104, 4, 9, 'In Transit', NULL, NULL);
+INSERT INTO Shipments VALUES (105, 5, 9, 'In Transit', NULL, NULL);

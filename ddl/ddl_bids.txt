@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS Bids;
+
+CREATE TABLE IF NOT EXISTS Bids (
+bidId INTEGER,
+shipmentId INTEGER,
+bidderAccount INTEGER,
+bidderType TEXT,
+amount DECIMAL,
+quantity Integer,
+eligible BOOLEAN DEFAULT FALSE
+);
+
+-- Bids associated with shipment 101 from different farmers, with valid bids needing quantity of 200 or more
+INSERT INTO Bids VALUES (501, 101, 1, 'Farmer', 2300.00, 200, NULL); --Valid
+INSERT INTO Bids VALUES (502, 101, 2, 'Farmer', 500.00, 50, NULL);
+INSERT INTO Bids VALUES (503, 101, 3, 'Farmer', 2200.00, 200, NULL);  --Valid
+INSERT INTO Bids VALUES (504, 101, 4, 'Farmer', 1100.00, 200, NULL);  --Valid and the winning bid since lowest amount
+INSERT INTO Bids VALUES (505, 101, 5, 'Farmer', 1000.00, 70, NULL);

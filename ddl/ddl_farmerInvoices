@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS FarmerInvoices;
+
+CREATE TABLE IF NOT EXISTS FarmerInvoices (
+    invoiceId INTEGER PRIMARY KEY,
+    shipmentId INTEGER,
+    farmerAccount INTEGER,
+    amount DECIMAL,
+);
+
+--Farmer invoices for first shipment
+INSERT INTO FarmerInvoices VALUES ('401', '101', '1', NULL);
+INSERT INTO FarmerInvoices VALUES ('402', '101', '2', NULL);
+INSERT INTO FarmerInvoices VALUES ('403', '101', '3', NULL);
+INSERT INTO FarmerInvoices VALUES ('404', '101', '4', NULL); -- Winning farmer invoice
+INSERT INTO FarmerInvoices VALUES ('405', '101', '5', NULL);
+
+INSERT INTO FarmerInvoices VALUES ('406', '102', '1', NULL);
+INSERT INTO FarmerInvoices VALUES ('407', '102', '2', NULL);
+INSERT INTO FarmerInvoices VALUES ('408', '102', '3', NULL);
+INSERT INTO FarmerInvoices VALUES ('409', '102', '4', NULL);
+INSERT INTO FarmerInvoices VALUES ('410', '102', '5', NULL);

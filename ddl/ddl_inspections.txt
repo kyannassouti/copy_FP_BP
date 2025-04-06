@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS Inspections;
+
+CREATE TABLE IF NOT EXISTS Inspections (
+inspectionId INTEGER,
+inspectorAccount INTEGER,
+shipmentId INTEGER,
+result TEXT,
+timeStamp DATETIME
+);
+
+-- Assume only one inspector account is used (Account 8)
+
+-- Inspection that passes for shipment 101
+INSERT INTO Inspections VALUES (601, 8, 101, 'Pass', '2025-04-01 15:42:00');
+
+-- Inspection that fails for shipment 102
+INSERT INTO Inspections VALUES (602, 8, 102, 'Fail', '2025-04-01 16:15:00');
+
+INSERT INTO Inspections VALUES (603, 8, 103, 'Pass', '2025-04-01 15:20:00');
+INSERT INTO Inspections VALUES (604, 8, 104, 'Fail', '2025-04-02 14:20:00');
+INSERT INTO Inspections VALUES (605, 8, 105, 'Pass', '2025-04-03 13:20:00');
+

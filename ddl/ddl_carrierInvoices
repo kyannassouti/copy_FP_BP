@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS CarrierInvoices;
+
+CREATE TABLE IF NOT EXISTS CarrierInvoices (
+    invoiceId INTEGER PRIMARY KEY,
+    shipmentId INTEGER,
+    carrierAccount INTEGER,
+    distanceKM INTEGER,
+    amount DECIMAL,
+);
+
+-- Carrier invoice for different shipments
+INSERT INTO CarrierInvoices VALUES ('401', '101', '9', 30, 2300); --Winning invoice
+INSERT INTO CarrierInvoices VALUES ('402', '102', '9', 40, 3100);
+INSERT INTO CarrierInvoices VALUES ('403', '103', '9', 20, 1400);
+INSERT INTO CarrierInvoices VALUES ('404', '104', '9', 60, 5100);
+INSERT INTO CarrierInvoices VALUES ('405', '105', '9', 45, 3500);

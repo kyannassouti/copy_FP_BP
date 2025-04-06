@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS Invoices;
+
+-- represents all invoices, the details, and the status
+CREATE TABLE IF NOT EXISTS Invoices (
+invoiceId INTEGER,
+shipmentId INTEGER,
+vendorAccount INTEGER,
+vendorType TEXT,
+amount DECIMAL,
+status TEXT  DEFAULT 'Pending',
+approved BOOLEAN DEFAULT FALSE,
+registered BOOLEAN DEFAULT FALSE,
+paid BOOLEAN DEFAULT FALSE
+);
+
+
+-- invoice that is created but still pending (not approved, not registered, not paid)
+INSERT INTO Invoices VALUES ('401', '101', '1', 'Farmer', 2300);
+INSERT INTO Invoices VALUES ('402', '101', '9', 'Carrier', 4500);
+
+-- invoice that is created and approved (not registered, not paid)
+INSERT INTO Invoices VALUES ('403', '102', '2', 'Farmer', 7800, 'Approved', TRUE);
+INSERT INTO Invoices VALUES ('404', '102', '9', 'Carrier', 8500, 'Approved', TRUE);
+
+-- invoice that is created, approved, and registered (not paid)
+INSERT INTO Invoices VALUES ('405', '103', '3', 'Farmer', 1100, 'Registered', TRUE, TRUE);
+INSERT INTO Invoices VALUES ('406', '103', '9', 'Carrier', 2500, 'Registered', TRUE, TRUE);
+
+-- invoice that is created, approved, registered, and paid
+INSERT INTO Invoices VALUES ('407', '104', '4', 'Farmer', 1300, 'Paid', TRUE, TRUE, TRUE);
+INSERT INTO Invoices VALUES ('408', '104', '9', 'Carrier', 200, 'Paid', TRUE, TRUE, TRUE);
+
